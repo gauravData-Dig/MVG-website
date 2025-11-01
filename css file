@@ -34,7 +34,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 20px;
 }
 
-/* Header Styles */
 header {
     background-color: rgba(10, 10, 10, 0.9);
     position: fixed;
@@ -103,7 +102,6 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
@@ -161,7 +159,6 @@ nav ul li a:hover {
     transform: translateY(-3px);
 }
 
-/* About Section */
 .section {
     padding: 100px 0;
 }
@@ -233,7 +230,6 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Products Section */
 .products {
     background-color: var(--secondary);
 }
@@ -301,7 +297,6 @@ nav ul li a:hover {
     color: var(--accent-light);
 }
 
-/* How It Works Section */
 .steps {
     display: flex;
     justify-content: space-between;
@@ -344,7 +339,6 @@ nav ul li a:hover {
     color: var(--text-secondary);
 }
 
-/* Testimonials Section */
 .testimonials {
     background-color: var(--secondary);
 }
@@ -398,7 +392,6 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
-/* Contact Section */
 .contact-container {
     display: flex;
     gap: 50px;
@@ -473,7 +466,6 @@ textarea.form-control {
     resize: vertical;
 }
 
-/* Footer */
 footer {
     background-color: var(--secondary);
     padding: 70px 0 30px;
@@ -574,7 +566,6 @@ footer {
     font-size: 14px;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -584,7 +575,6 @@ footer {
     animation: fadeIn 1s ease forwards;
 }
 
-/* Responsive Styles */
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
