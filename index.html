@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVG Car Care - Premium Car Polishes & Waxes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #e6b325;
+            --accent: #c41e3a;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 10px auto;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #d19c1f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0f2a46;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section with Slideshow */
+        .hero {
+            position: relative;
+            height: 80vh;
+            overflow: hidden;
+        }
+        
+        .slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background: rgba(0,0,0,0.5);
+            color: white;
+        }
+        
+        .slide-text {
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        
+        .slide-text h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .slide-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .indicator.active {
+            background: var(--secondary);
+        }
+        
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+        
+        .slide-nav:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        
+        .slide-prev {
+            left: 20px;
+        }
+        
+        .slide-next {
+            right: 20px;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: var(--light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            height: 400px;
+            background-color: #eee;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .slide-text h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                padding: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero {
+                height: 70vh;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slide-text h1 {
+                font-size: 2rem;
+            }
+            
+            .slide-text p {
+                font-size: 1rem;
+            }
+            
+            .slide-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">MVG <span>Car Care</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#features">Why MVG</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slideshow -->
+    <section class="hero" id="home">
+        <div class="slideshow">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="slide-text">
+                            <h1>Professional-Grade Car Care</h1>
+                            <p>Discover MVG's premium formulations for the ultimate shine and protection your vehicle deserves.</p>
+                            <a href="#products" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="slide-text">
+                            <h1>Showroom Shine Guaranteed</h1>
+                            <p>Our carnauba wax and polishes deliver a deep, glossy finish that lasts for months.</p>
+                            <a href="#products" class="btn">Explore Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="slide-text">
+                            <h1>Protect Your Investment</h1>
+                            <p>UV protection and long-lasting formulas to keep your car looking new for years.</p>
+                            <a href="#products" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1921&q=80');">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="slide-text">
+                            <h1>Perfect for All Surfaces</h1>
+                            <p>From tires to dashboards, we have the right product for every part of your vehicle.</p>
+                            <a href="#products" class="btn">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slide-nav slide-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slide-nav slide-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="slide-indicators">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-car-side fa-3x"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Premium Tire Polish</h3>
+                        <p>Long-lasting shine and UV protection for your tires. Non-greasy formula that repels dirt and dust.</p>
+                        <div class="product-price">$19.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-tachometer-alt fa-3x"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Dashboard Polish</h3>
+                        <p>Restores and protects your car's interior surfaces. Prevents cracking and fading from UV exposure.</p>
+                        <div class="product-price">$16.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-sun fa-3x"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Carnauba Wax</h3>
+                        <p>100% natural Brazilian carnauba wax for a deep, warm glow. Provides exceptional water beading.</p>
+                        <div class="product-price">$24.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-spray-can fa-3x"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Wax Polish Spray</h3>
+                        <p>Quick and easy spray-on wax polish. Enhances shine and adds a protective layer between full waxes.</p>
+                        <div class="product-price">$14.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Choose MVG</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Our products are formulated with the highest quality ingredients for exceptional results.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Long-Lasting Protection</h3>
+                    <p>Protect your vehicle from UV rays, oxidation, and environmental contaminants.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Environmentally conscious formulations that are safe for you and the planet.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Professional Grade</h3>
+                    <p>Trusted by professional detailers and car enthusiasts worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Super Shiny Results</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Shiny black car">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Car detailing">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury car">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551524164-6ca5e3aa1c04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Car wax application">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Shiny red car">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Car interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <p class="testimonial-text">"The MVG Carnauba Wax gave my car the deepest shine I've ever seen. It's been three months and the water is still beading perfectly!"</p>
+                    <p class="testimonial-author">- Michael R., Car Enthusiast</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About MVG Car Care</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Our Story</h3>
+                    <p>MVG Car Care was founded with a simple mission: to create the highest quality car care products that deliver professional results for every vehicle owner.</p>
+                    <p>With over 15 years of experience in automotive detailing, our founder recognized the need for products that combine cutting-edge chemistry with ease of use.</p>
+                    <p>Today, MVG products are trusted by professional detailers and car enthusiasts around the world who demand nothing but the best for their vehicles.</p>
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                </div>
+                <div class="about-img">
+                    <i class="fas fa-history fa-5x"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Our Location</h3>
+                            <p>123 Auto Care Lane, Detroit, MI 48201</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone Number</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Address</h3>
+                            <p>info@mvgcarcare.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Monday - Friday: 9AM - 6PM</p>
+                            <p>Saturday: 10AM - 4PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MVG Car Care</h3>
+                    <p>Premium car care products for the discerning vehicle owner. Professional results, guaranteed.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#features">Why MVG</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Tire Polish</a></li>
+                        <li><a href="#">Dashboard Polish</a></li>
+                        <li><a href="#">Carnauba Wax</a></li>
+                        <li><a href="#">Wax Polish</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 4px; border: none;">
+                        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 MVG Car Care. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Slideshow Functionality
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.slide-prev');
+        const nextBtn = document.querySelector('.slide-next');
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+            
+            // Show the selected slide
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+        
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+        
+        // Set up event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Add click events to indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                resetSlideInterval();
+            });
+        });
+        
+        // Auto-advance slides
+        function startSlideInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function resetSlideInterval() {
+            clearInterval(slideInterval);
+            startSlideInterval();
+        }
+        
+        // Start the slideshow
+        startSlideInterval();
+        
+        // Pause on hover
+        const slideshow = document.querySelector('.slideshow');
+        slideshow.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        slideshow.addEventListener('mouseleave', () => {
+            startSlideInterval();
+        });
+    </script>
+</body>
+</html>
