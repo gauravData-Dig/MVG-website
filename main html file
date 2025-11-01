@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVG | Premium Car & Bike Care</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo"><i class="fas fa-car"></i>MV<span>G</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Bringing New Life to Your Ride</h1>
+                <p>Premium car and bike care products engineered for perfection. Experience the MVG difference where your vehicle shines forever.</p>
+                <div>
+                    <a href="#products" class="btn">Shop Now</a>
+                    <a href="#about" class="btn btn-light">Join the MVG Family</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About MVG</h2>
+                <p>We're driven by shine, focused on customer happiness, and committed to extending the life of every vehicle.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Where Your Vehicle Shines Forever</h3>
+                    <p>At MVG, we believe that your vehicle deserves the best care possible. That's why we've developed a premium range of car and bike care products that not only enhance appearance but also provide long-lasting protection.</p>
+                    <p>Our mission goes beyond profit - we're dedicated to customer satisfaction and environmental responsibility. All our formulations are eco-friendly, ensuring your vehicle shines while protecting our planet.</p>
+                    <p>With MVG, you're not just buying a product - you're investing in the longevity and beauty of your vehicle.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Car Detailing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Products</h2>
+                <p>Engineered for perfection, our products deliver unmatched shine and protection for your vehicle.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1628592102751-ba83b0314276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tyre Polish">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tyre Polish</h3>
+                        <p>Restores and maintains deep black appearance with UV protection. Safe for all tyre types.</p>
+                        <div class="product-price">
+                            <span class="price">$24.99</span>
+                            <a href="#" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1632857809682-9a9e01c91c6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Carnauba Wax">
+                    </div>
+                    <div class="product-info">
+                        <h3>Carnauba Wax</h3>
+                        <p>Premium natural wax for brilliant, long-lasting shine. Enhances paint depth and clarity.</p>
+                        <div class="product-price">
+                            <span class="price">$39.99</span>
+                            <a href="#" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1603712610496-5369a7540c22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dashboard Polish">
+                    </div>
+                    <div class="product-info">
+                        <h3>Dashboard Polish</h3>
+                        <p>Non-greasy formula that protects against UV damage while restoring original finish.</p>
+                        <div class="product-price">
+                            <span class="price">$19.99</span>
+                            <a href="#" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Car Shampoo">
+                    </div>
+                    <div class="product-info">
+                        <h3>pH-Balanced Car Shampoo</h3>
+                        <p>Gentle yet effective formula that cleans without stripping wax or damaging surfaces.</p>
+                        <div class="product-price">
+                            <span class="price">$29.99</span>
+                            <a href="#" class="btn">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Simple steps to transform your vehicle from dull to dazzling with MVG premium products.</p>
+            </div>
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>Clean & Prepare</h3>
+                    <p>Start with a clean surface using our pH-balanced car shampoo to remove dirt and grime.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Apply Product</h3>
+                    <p>Apply the appropriate MVG product evenly using our premium applicators for best results.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Let It Cure</h3>
+                    <p>Allow the product to bond with the surface for the recommended time for maximum protection.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <h3>Reveal The Shine</h3>
+                    <p>Buff to a brilliant shine and admire the transformation of your vehicle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Stories</h2>
+                <p>Hear from our satisfied customers who have experienced the MVG difference.</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">"I've tried many car care products over the years, but nothing comes close to MVG. My 10-year-old car looks brand new after using their Carnauba Wax. The shine is incredible and lasts for months!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Johnson</h4>
+                            <p>Car Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Have questions or want to become a distributor? We'd love to hear from you.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Reach out to us for product inquiries, support, or partnership opportunities.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>123 Automotive Avenue, Detroit, MI 48201</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>info@mvgcare.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <a href="#" class="footer-logo">MV<span>G</span></a>
+                    <p>Premium car and bike care products engineered for perfection. Experience the MVG difference where your vehicle shines forever.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tyre Polish</a></li>
+                        <li><a href="#">Carnauba Wax</a></li>
+                        <li><a href="#">Dashboard Polish</a></li>
+                        <li><a href="#">Car Shampoo</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Automotive Ave, Detroit</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@mvgcare.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 MVG Car & Bike Care. All Rights Reserved. | Driven by Shine</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
